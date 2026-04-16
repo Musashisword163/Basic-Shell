@@ -97,6 +97,7 @@ int executeLine(char **args){
 }
 
 void readCommand(void){
+    printf("You can enter the 'gondorCallsForAid' command for help\n");
     char *line; //Pointer to the first line (probably) and pointer to each character iteratively
     char **args; //Pointer to the arguiment for each command (probably)
     int status=1;
