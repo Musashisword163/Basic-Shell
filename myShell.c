@@ -32,7 +32,7 @@ int launchLine(char **args){
     pid = fork();
     if(pid<0){perror("okehMastah: It seems that fork has failed");}  //Fork Failed
     else if(pid==0){//Fork Succeeded but, the replacement of the forked process with the desired program image failed
-        if(execvp(args[0], args)==-1){perror("okehMastah: It seems that fork has failed");}
+        if(execvp(args[0], args)==-1){perror("okehMastah: It seems that fork has failed");return 0;}
     }
     else{//Parent will wait for the child for the Execution of the child to get completed
         do{wpid = waitpid(pid, &status, WUNTRACED);}while(!WIFEXITED(status) && !WIFSIGNALED(status));
